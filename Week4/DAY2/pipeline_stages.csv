@@ -1,0 +1,7 @@
+stage_order,stage_name,input,output,description
+1,Ingestion,raw_lemonade_sales.csv (source system),in-memory raw table,Load the raw file exactly as received
+2,Standardize,raw table,standardized table,Fix date formats and product name casing
+3,Handle Missing Values,standardized table,completed table,Recover or flag missing customer_name/email/unit_price
+4,Deduplicate,completed table,deduped table,Remove exact duplicate rows
+5,Validate,deduped table,validated table,Check against customers.csv and products_reference.csv
+6,Load,validated table,clean_sales.csv,Write the final clean file for reporting
